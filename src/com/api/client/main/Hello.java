@@ -13,7 +13,9 @@ import java.util.Map;
 import com.api.client.db.DataBaseUtility;
 import com.api.client.globaldefine.GlobalDefine;
 import com.api.client.http.HttpRun;
-
+/*
+add some comments to test github
+ */
 public class Hello 
 {
 	public static void main(String[] args)
