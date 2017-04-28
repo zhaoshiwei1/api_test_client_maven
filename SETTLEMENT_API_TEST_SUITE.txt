@@ -1,0 +1,4169 @@
+
+                             TESTCASEID : 1
+                                   NAME : VALID incOrderAmount
+                                    URL : /V1/Driveraccount/incOrderAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 105
+                       SERVICE_ORDER_ID : 6408403168814591353
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":200,"ret_msg":"success","result":true}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 2
+                                   NAME : INVALID incOrderAmount
+                                    URL : /V1/Driveraccount/incOrderAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 0
+                                 AMOUNT : 105
+                       SERVICE_ORDER_ID : 6408403168814591353
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"missing param [driver_id]"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 3
+                                   NAME : INVALID incOrderAmount
+                                    URL : /V1/Driveraccount/incOrderAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : -1
+                                 AMOUNT : 105
+                       SERVICE_ORDER_ID : 6408403168814591353
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":2002,"ret_msg":"No such file or directory"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 4
+                                   NAME : INVALID incOrderAmount
+                                    URL : /V1/Driveraccount/incOrderAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 99999999
+                                 AMOUNT : 105
+                       SERVICE_ORDER_ID : 6408403168814591353
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":500,"ret_msg":"Not found driver record by driverId(99999999)"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 5
+                                   NAME : INVALID incOrderAmount
+                                    URL : /V1/Driveraccount/incOrderAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 0
+                       SERVICE_ORDER_ID : 6408403168814591353
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"missing param [amount]"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 6
+                                   NAME : INVALID incOrderAmount
+                                    URL : /V1/Driveraccount/incOrderAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : -1
+                       SERVICE_ORDER_ID : 6408403168814591353
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"param amount is not < 0 or > 1000000 amount=-1"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 7
+                                   NAME : INVALID incOrderAmount
+                                    URL : /V1/Driveraccount/incOrderAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 99999999999
+                       SERVICE_ORDER_ID : 6408403168814591353
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"param amount is not < 0 or > 1000000 amount=99999999999"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 8
+                                   NAME : INVALID incOrderAmount
+                                    URL : /V1/Driveraccount/incOrderAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 105
+                       SERVICE_ORDER_ID : 0
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"missing param [service_order_id]"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 9
+                                   NAME : INVALID incOrderAmount
+                                    URL : /V1/Driveraccount/incOrderAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 105
+                       SERVICE_ORDER_ID : -1
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":500,"ret_msg":"Not found service_order_charge record by service_order_id(-1)"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 10
+                                   NAME : INVALID incOrderAmount
+                                    URL : /V1/Driveraccount/incOrderAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 105
+                       SERVICE_ORDER_ID : 9999999999999999999
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":500,"ret_msg":"Not found service_order_charge record by service_order_id(9999999999999999999)"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 11
+                                   NAME : INVALID incOrderAmount
+                                    URL : /V1/Driveraccount/incOrderAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 105
+                       SERVICE_ORDER_ID : 6408403168814591353
+                                 SOURCE : 0
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"missing param [source]"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 12
+                                   NAME : INVALID incOrderAmount
+                                    URL : /V1/Driveraccount/incOrderAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 105
+                       SERVICE_ORDER_ID : 6408403168814591353
+                                 SOURCE : -1
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"param [source and rewards_type] value -1 and 100 are invalid"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 13
+                                   NAME : INVALID incOrderAmount
+                                    URL : /V1/Driveraccount/incOrderAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 105
+                       SERVICE_ORDER_ID : 6408403168814591353
+                                 SOURCE : 10
+                           REWARDS_TYPE : 0
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"missing param [rewards_type]"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 14
+                                   NAME : INVALID incOrderAmount
+                                    URL : /V1/Driveraccount/incOrderAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 105
+                       SERVICE_ORDER_ID : 6408403168814591353
+                                 SOURCE : 10
+                           REWARDS_TYPE : -1
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"param [source and rewards_type] value 10 and -1 are invalid"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 15
+                                   NAME : INVALID incOrderAmount
+                                    URL : /V1/Driveraccount/incOrderAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 105
+                       SERVICE_ORDER_ID : 6408403168814591353
+                                 SOURCE : 999
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"param [source and rewards_type] value 999 and 100 are invalid"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 16
+                                   NAME : INVALID incOrderAmount
+                                    URL : /V1/Driveraccount/incOrderAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 105
+                       SERVICE_ORDER_ID : 6408403168814591353
+                                 SOURCE : 10
+                           REWARDS_TYPE : 9999
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"param [source and rewards_type] value 10 and 9999 are invalid"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 17
+                                   NAME : VALID decOrderAmount
+                                    URL : /V1/Driveraccount/decOrderAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 105
+                       SERVICE_ORDER_ID : 6400622264327225754
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":200,"ret_msg":"success","result":true}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 18
+                                   NAME : INVALID decOrderAmount
+                                    URL : /V1/Driveraccount/decOrderAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 0
+                                 AMOUNT : 105
+                       SERVICE_ORDER_ID : 6400622264327225754
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"missing param [driver_id]"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 19
+                                   NAME : INVALID decOrderAmount
+                                    URL : /V1/Driveraccount/decOrderAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : -1
+                                 AMOUNT : 105
+                       SERVICE_ORDER_ID : 6400622264327225754
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":2002,"ret_msg":"No such file or directory"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 20
+                                   NAME : INVALID decOrderAmount
+                                    URL : /V1/Driveraccount/decOrderAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 99999999
+                                 AMOUNT : 105
+                       SERVICE_ORDER_ID : 6400622264327225754
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":500,"ret_msg":"Not found driver record by driverId(99999999)"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 21
+                                   NAME : INVALID decOrderAmount
+                                    URL : /V1/Driveraccount/decOrderAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 0
+                       SERVICE_ORDER_ID : 6400622264327225754
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"missing param [amount]"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 22
+                                   NAME : INVALID decOrderAmount
+                                    URL : /V1/Driveraccount/decOrderAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : -1
+                       SERVICE_ORDER_ID : 6400622264327225754
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"param amount is not <= 0 amount=-1"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 23
+                                   NAME : INVALID decOrderAmount
+                                    URL : /V1/Driveraccount/decOrderAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 99999999999
+                       SERVICE_ORDER_ID : 6400622264327225754
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":200,"ret_msg":"success","result":true}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 24
+                                   NAME : INVALID decOrderAmount
+                                    URL : /V1/Driveraccount/decOrderAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 105
+                       SERVICE_ORDER_ID : 0
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"missing param [service_order_id]"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 25
+                                   NAME : INVALID decOrderAmount
+                                    URL : /V1/Driveraccount/decOrderAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 105
+                       SERVICE_ORDER_ID : -1
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":500,"ret_msg":"Not found service_order_charge record by service_order_id(-1)"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 26
+                                   NAME : INVALID decOrderAmount
+                                    URL : /V1/Driveraccount/decOrderAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 105
+                       SERVICE_ORDER_ID : 9999999999999999999
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":500,"ret_msg":"Not found service_order_charge record by service_order_id(9999999999999999999)"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 27
+                                   NAME : INVALID decOrderAmount
+                                    URL : /V1/Driveraccount/decOrderAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 105
+                       SERVICE_ORDER_ID : 6400622264327225754
+                                 SOURCE : 0
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"missing param [source]"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 28
+                                   NAME : INVALID decOrderAmount
+                                    URL : /V1/Driveraccount/decOrderAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 105
+                       SERVICE_ORDER_ID : 6400622264327225754
+                                 SOURCE : -1
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"param [source and rewards_type] value -1 and 100 are invalid"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 29
+                                   NAME : INVALID decOrderAmount
+                                    URL : /V1/Driveraccount/decOrderAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 105
+                       SERVICE_ORDER_ID : 6400622264327225754
+                                 SOURCE : 10
+                           REWARDS_TYPE : 0
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"missing param [rewards_type]"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 30
+                                   NAME : INVALID decOrderAmount
+                                    URL : /V1/Driveraccount/decOrderAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 105
+                       SERVICE_ORDER_ID : 6400622264327225754
+                                 SOURCE : 10
+                           REWARDS_TYPE : -1
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"param [source and rewards_type] value 10 and -1 are invalid"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 31
+                                   NAME : INVALID decOrderAmount
+                                    URL : /V1/Driveraccount/decOrderAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 105
+                       SERVICE_ORDER_ID : 6400622264327225754
+                                 SOURCE : 999
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"param [source and rewards_type] value 999 and 100 are invalid"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 32
+                                   NAME : INVALID decOrderAmount
+                                    URL : /V1/Driveraccount/decOrderAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 105
+                       SERVICE_ORDER_ID : 6400622264327225754
+                                 SOURCE : 10
+                           REWARDS_TYPE : 9999
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"param [source and rewards_type] value 10 and 9999 are invalid"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 33
+                                   NAME : VALID incRewardAmount
+                                    URL : /V1/Driveraccount/incRewardAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 105
+                       SERVICE_ORDER_ID : 6405784767772383865
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":200,"ret_msg":"success","result":true}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 34
+                                   NAME : INVALID incRewardAmount
+                                    URL : /V1/Driveraccount/incRewardAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 0
+                                 AMOUNT : 105
+                       SERVICE_ORDER_ID : 6405784767772383865
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"missing param [driver_id]"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 35
+                                   NAME : INVALID incRewardAmount
+                                    URL : /V1/Driveraccount/incRewardAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : -1
+                                 AMOUNT : 105
+                       SERVICE_ORDER_ID : 6405784767772383865
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":2002,"ret_msg":"No such file or directory"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 36
+                                   NAME : INVALID incRewardAmount
+                                    URL : /V1/Driveraccount/incRewardAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 99999999
+                                 AMOUNT : 105
+                       SERVICE_ORDER_ID : 6405784767772383865
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":500,"ret_msg":"Not found driver record by driverId(99999999)"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 37
+                                   NAME : INVALID incRewardAmount
+                                    URL : /V1/Driveraccount/incRewardAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 0
+                       SERVICE_ORDER_ID : 6405784767772383865
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"missing param [amount]"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 38
+                                   NAME : INVALID incRewardAmount
+                                    URL : /V1/Driveraccount/incRewardAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : -1
+                       SERVICE_ORDER_ID : 6405784767772383865
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"param amount is not < 0 or > 1000000 amount=-1"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 39
+                                   NAME : INVALID incRewardAmount
+                                    URL : /V1/Driveraccount/incRewardAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 99999999999
+                       SERVICE_ORDER_ID : 6405784767772383865
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"param amount is not < 0 or > 1000000 amount=99999999999"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 40
+                                   NAME : INVALID incRewardAmount
+                                    URL : /V1/Driveraccount/incRewardAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 105
+                       SERVICE_ORDER_ID : 0
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":200,"ret_msg":"success","result":true}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 41
+                                   NAME : INVALID incRewardAmount
+                                    URL : /V1/Driveraccount/incRewardAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 105
+                       SERVICE_ORDER_ID : -1
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":200,"ret_msg":"success","result":true}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 42
+                                   NAME : INVALID incRewardAmount
+                                    URL : /V1/Driveraccount/incRewardAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 105
+                       SERVICE_ORDER_ID : 9999999999999999999
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"missing param [city]"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 43
+                                   NAME : INVALID incRewardAmount
+                                    URL : /V1/Driveraccount/incRewardAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 105
+                       SERVICE_ORDER_ID : 6405784767772383865
+                                 SOURCE : 0
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"missing param [source]"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 44
+                                   NAME : INVALID incRewardAmount
+                                    URL : /V1/Driveraccount/incRewardAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 105
+                       SERVICE_ORDER_ID : 6405784767772383865
+                                 SOURCE : -1
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"param [source and rewards_type] value -1 and 100 are invalid"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 45
+                                   NAME : INVALID incRewardAmount
+                                    URL : /V1/Driveraccount/incRewardAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 105
+                       SERVICE_ORDER_ID : 6405784767772383865
+                                 SOURCE : 10
+                           REWARDS_TYPE : 0
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"missing param [rewards_type]"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 46
+                                   NAME : INVALID incRewardAmount
+                                    URL : /V1/Driveraccount/incRewardAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 105
+                       SERVICE_ORDER_ID : 6405784767772383865
+                                 SOURCE : 10
+                           REWARDS_TYPE : -1
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"param [source and rewards_type] value 10 and -1 are invalid"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 47
+                                   NAME : INVALID incRewardAmount
+                                    URL : /V1/Driveraccount/incRewardAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 105
+                       SERVICE_ORDER_ID : 6405784767772383865
+                                 SOURCE : 999
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"param [source and rewards_type] value 999 and 100 are invalid"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 48
+                                   NAME : INVALID incRewardAmount
+                                    URL : /V1/Driveraccount/incRewardAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 105
+                       SERVICE_ORDER_ID : 6405784767772383865
+                                 SOURCE : 10
+                           REWARDS_TYPE : 9999
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"param [source and rewards_type] value 10 and 9999 are invalid"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 49
+                                   NAME : VALID decRewardAmount
+                                    URL : /V1/Driveraccount/decRewardAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 105
+                       SERVICE_ORDER_ID : 6405779390473329255
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":200,"ret_msg":"success","result":true}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 50
+                                   NAME : INVALID decRewardAmount
+                                    URL : /V1/Driveraccount/decRewardAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 0
+                                 AMOUNT : 105
+                       SERVICE_ORDER_ID : 6405779390473329255
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"missing param [driver_id]"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 51
+                                   NAME : INVALID decRewardAmount
+                                    URL : /V1/Driveraccount/decRewardAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : -1
+                                 AMOUNT : 105
+                       SERVICE_ORDER_ID : 6405779390473329255
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":2002,"ret_msg":"No such file or directory"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 52
+                                   NAME : INVALID decRewardAmount
+                                    URL : /V1/Driveraccount/decRewardAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 99999999
+                                 AMOUNT : 105
+                       SERVICE_ORDER_ID : 6405779390473329255
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":500,"ret_msg":"Not found driver record by driverId(99999999)"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 53
+                                   NAME : INVALID decRewardAmount
+                                    URL : /V1/Driveraccount/decRewardAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 0
+                       SERVICE_ORDER_ID : 6405779390473329255
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"missing param [amount]"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 54
+                                   NAME : INVALID decRewardAmount
+                                    URL : /V1/Driveraccount/decRewardAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : -1
+                       SERVICE_ORDER_ID : 6405779390473329255
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"param amount is not <= 0 amount=-1"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 55
+                                   NAME : INVALID decRewardAmount
+                                    URL : /V1/Driveraccount/decRewardAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 99999999999
+                       SERVICE_ORDER_ID : 6405779390473329255
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":200,"ret_msg":"success","result":true}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 56
+                                   NAME : INVALID decRewardAmount
+                                    URL : /V1/Driveraccount/decRewardAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 105
+                       SERVICE_ORDER_ID : 0
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":200,"ret_msg":"success","result":true}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 57
+                                   NAME : INVALID decRewardAmount
+                                    URL : /V1/Driveraccount/decRewardAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 105
+                       SERVICE_ORDER_ID : -1
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":200,"ret_msg":"success","result":true}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 58
+                                   NAME : INVALID decRewardAmount
+                                    URL : /V1/Driveraccount/decRewardAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 105
+                       SERVICE_ORDER_ID : 9999999999999999999
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"missing param [city]"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 59
+                                   NAME : INVALID decRewardAmount
+                                    URL : /V1/Driveraccount/decRewardAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 105
+                       SERVICE_ORDER_ID : 6405779390473329255
+                                 SOURCE : 0
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"missing param [source]"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 60
+                                   NAME : INVALID decRewardAmount
+                                    URL : /V1/Driveraccount/decRewardAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 105
+                       SERVICE_ORDER_ID : 6405779390473329255
+                                 SOURCE : -1
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"param [source and rewards_type] value -1 and 100 are invalid"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 61
+                                   NAME : INVALID decRewardAmount
+                                    URL : /V1/Driveraccount/decRewardAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 105
+                       SERVICE_ORDER_ID : 6405779390473329255
+                                 SOURCE : 10
+                           REWARDS_TYPE : 0
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"missing param [rewards_type]"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 62
+                                   NAME : INVALID decRewardAmount
+                                    URL : /V1/Driveraccount/decRewardAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 105
+                       SERVICE_ORDER_ID : 6405779390473329255
+                                 SOURCE : 10
+                           REWARDS_TYPE : -1
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"param [source and rewards_type] value 10 and -1 are invalid"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 63
+                                   NAME : INVALID decRewardAmount
+                                    URL : /V1/Driveraccount/decRewardAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 105
+                       SERVICE_ORDER_ID : 6405779390473329255
+                                 SOURCE : 999
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"param [source and rewards_type] value 999 and 100 are invalid"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 64
+                                   NAME : INVALID decRewardAmount
+                                    URL : /V1/Driveraccount/decRewardAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 105
+                       SERVICE_ORDER_ID : 6405779390473329255
+                                 SOURCE : 10
+                           REWARDS_TYPE : 9999
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"param [source and rewards_type] value 10 and 9999 are invalid"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 65
+                                   NAME : VALID incAccountAdjustAmount
+                                    URL : /V1/Driveraccount/incAccountAdjustAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 105
+                       SERVICE_ORDER_ID : 6400611608513364341
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+                        REALTIME_INCOME : TRUE
+
+	RESPONSE: {"ret_code":200,"ret_msg":"success","result":true}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 66
+                                   NAME : VALID incAccountAdjustAmount
+                                    URL : /V1/Driveraccount/incAccountAdjustAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 105
+                       SERVICE_ORDER_ID : EMPTY
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+                        REALTIME_INCOME : EMPTY
+
+	RESPONSE: {"ret_code":200,"ret_msg":"success","result":true}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 67
+                                   NAME : INVALID incAccountAdjustAmount
+                                    URL : /V1/Driveraccount/incAccountAdjustAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 0
+                                 AMOUNT : 105
+                       SERVICE_ORDER_ID : EMPTY
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+                        REALTIME_INCOME : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"missing param [driver_id]"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 68
+                                   NAME : INVALID incAccountAdjustAmount
+                                    URL : /V1/Driveraccount/incAccountAdjustAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : -1
+                                 AMOUNT : 105
+                       SERVICE_ORDER_ID : EMPTY
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+                        REALTIME_INCOME : EMPTY
+
+	RESPONSE: {"ret_code":2002,"ret_msg":"No such file or directory"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 69
+                                   NAME : INVALID incAccountAdjustAmount
+                                    URL : /V1/Driveraccount/incAccountAdjustAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 99999999
+                                 AMOUNT : 105
+                       SERVICE_ORDER_ID : EMPTY
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+                        REALTIME_INCOME : EMPTY
+
+	RESPONSE: {"ret_code":500,"ret_msg":"Not found driver record by driverId(99999999)"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 70
+                                   NAME : INVALID incAccountAdjustAmount
+                                    URL : /V1/Driveraccount/incAccountAdjustAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 0
+                       SERVICE_ORDER_ID : EMPTY
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+                        REALTIME_INCOME : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"missing param [amount]"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 71
+                                   NAME : INVALID incAccountAdjustAmount
+                                    URL : /V1/Driveraccount/incAccountAdjustAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : -1
+                       SERVICE_ORDER_ID : EMPTY
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+                        REALTIME_INCOME : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"param amount is not < 0 or > 1000000 amount=-1"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 72
+                                   NAME : INVALID incAccountAdjustAmount
+                                    URL : /V1/Driveraccount/incAccountAdjustAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 99999999999
+                       SERVICE_ORDER_ID : EMPTY
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+                        REALTIME_INCOME : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"param amount is not < 0 or > 1000000 amount=99999999999"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 73
+                                   NAME : INVALID incAccountAdjustAmount
+                                    URL : /V1/Driveraccount/incAccountAdjustAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 105
+                       SERVICE_ORDER_ID : 0
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+                        REALTIME_INCOME : EMPTY
+
+	RESPONSE: {"ret_code":200,"ret_msg":"success","result":true}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 74
+                                   NAME : INVALID incAccountAdjustAmount
+                                    URL : /V1/Driveraccount/incAccountAdjustAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 105
+                       SERVICE_ORDER_ID : -1
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+                        REALTIME_INCOME : EMPTY
+
+	RESPONSE: {"ret_code":200,"ret_msg":"success","result":true}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 75
+                                   NAME : INVALID incAccountAdjustAmount
+                                    URL : /V1/Driveraccount/incAccountAdjustAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 105
+                       SERVICE_ORDER_ID : 9999999999999999999
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+                        REALTIME_INCOME : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"missing param [city]"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 76
+                                   NAME : INVALID incAccountAdjustAmount
+                                    URL : /V1/Driveraccount/incAccountAdjustAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 105
+                       SERVICE_ORDER_ID : EMPTY
+                                 SOURCE : 0
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+                        REALTIME_INCOME : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"missing param [source]"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 77
+                                   NAME : INVALID incAccountAdjustAmount
+                                    URL : /V1/Driveraccount/incAccountAdjustAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 105
+                       SERVICE_ORDER_ID : EMPTY
+                                 SOURCE : -1
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+                        REALTIME_INCOME : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"param [source and rewards_type] value -1 and 100 are invalid"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 78
+                                   NAME : INVALID incAccountAdjustAmount
+                                    URL : /V1/Driveraccount/incAccountAdjustAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 105
+                       SERVICE_ORDER_ID : EMPTY
+                                 SOURCE : 10
+                           REWARDS_TYPE : 0
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+                        REALTIME_INCOME : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"missing param [rewards_type]"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 79
+                                   NAME : INVALID incAccountAdjustAmount
+                                    URL : /V1/Driveraccount/incAccountAdjustAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 105
+                       SERVICE_ORDER_ID : EMPTY
+                                 SOURCE : 10
+                           REWARDS_TYPE : -1
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+                        REALTIME_INCOME : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"param [source and rewards_type] value 10 and -1 are invalid"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 80
+                                   NAME : INVALID incAccountAdjustAmount
+                                    URL : /V1/Driveraccount/incAccountAdjustAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 105
+                       SERVICE_ORDER_ID : EMPTY
+                                 SOURCE : 999
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+                        REALTIME_INCOME : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"param [source and rewards_type] value 999 and 100 are invalid"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 81
+                                   NAME : INVALID incAccountAdjustAmount
+                                    URL : /V1/Driveraccount/incAccountAdjustAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 105
+                       SERVICE_ORDER_ID : EMPTY
+                                 SOURCE : 10
+                           REWARDS_TYPE : 9999
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+                        REALTIME_INCOME : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"param [source and rewards_type] value 10 and 9999 are invalid"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 82
+                                   NAME : VALID decAccountAdjustAmount
+                                    URL : /V1/Driveraccount/decAccountAdjustAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062395
+                                 AMOUNT : 105
+                       SERVICE_ORDER_ID : 6410613840038228078
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+                        REALTIME_INCOME : TRUE
+
+	RESPONSE: {"ret_code":200,"ret_msg":"success","result":true}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 83
+                                   NAME : VALID decAccountAdjustAmount
+                                    URL : /V1/Driveraccount/decAccountAdjustAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062395
+                                 AMOUNT : 105
+                       SERVICE_ORDER_ID : EMPTY
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+                        REALTIME_INCOME : EMPTY
+
+	RESPONSE: {"ret_code":200,"ret_msg":"success","result":true}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 84
+                                   NAME : INVALID decAccountAdjustAmount
+                                    URL : /V1/Driveraccount/decAccountAdjustAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 0
+                                 AMOUNT : 105
+                       SERVICE_ORDER_ID : EMPTY
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+                        REALTIME_INCOME : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"missing param [driver_id]"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 85
+                                   NAME : INVALID decAccountAdjustAmount
+                                    URL : /V1/Driveraccount/decAccountAdjustAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : -1
+                                 AMOUNT : 105
+                       SERVICE_ORDER_ID : EMPTY
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+                        REALTIME_INCOME : EMPTY
+
+	RESPONSE: {"ret_code":2002,"ret_msg":"No such file or directory"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 86
+                                   NAME : INVALID decAccountAdjustAmount
+                                    URL : /V1/Driveraccount/decAccountAdjustAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 99999999
+                                 AMOUNT : 105
+                       SERVICE_ORDER_ID : EMPTY
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+                        REALTIME_INCOME : EMPTY
+
+	RESPONSE: {"ret_code":500,"ret_msg":"Not found driver record by driverId(99999999)"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 87
+                                   NAME : INVALID decAccountAdjustAmount
+                                    URL : /V1/Driveraccount/decAccountAdjustAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 0
+                       SERVICE_ORDER_ID : EMPTY
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+                        REALTIME_INCOME : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"missing param [amount]"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 88
+                                   NAME : INVALID decAccountAdjustAmount
+                                    URL : /V1/Driveraccount/decAccountAdjustAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : -1
+                       SERVICE_ORDER_ID : EMPTY
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+                        REALTIME_INCOME : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"param amount is not <= 0 amount=-1"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 89
+                                   NAME : INVALID decAccountAdjustAmount
+                                    URL : /V1/Driveraccount/decAccountAdjustAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 99999999999
+                       SERVICE_ORDER_ID : EMPTY
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+                        REALTIME_INCOME : EMPTY
+
+	RESPONSE: {"ret_code":200,"ret_msg":"success","result":true}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 90
+                                   NAME : INVALID decAccountAdjustAmount
+                                    URL : /V1/Driveraccount/decAccountAdjustAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 105
+                       SERVICE_ORDER_ID : 0
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+                        REALTIME_INCOME : EMPTY
+
+	RESPONSE: {"ret_code":200,"ret_msg":"success","result":true}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 91
+                                   NAME : INVALID decAccountAdjustAmount
+                                    URL : /V1/Driveraccount/decAccountAdjustAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 105
+                       SERVICE_ORDER_ID : -1
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+                        REALTIME_INCOME : EMPTY
+
+	RESPONSE: {"ret_code":200,"ret_msg":"success","result":true}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 92
+                                   NAME : INVALID decAccountAdjustAmount
+                                    URL : /V1/Driveraccount/decAccountAdjustAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 105
+                       SERVICE_ORDER_ID : 9999999999999999999
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+                        REALTIME_INCOME : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"missing param [city]"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 93
+                                   NAME : INVALID decAccountAdjustAmount
+                                    URL : /V1/Driveraccount/decAccountAdjustAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 105
+                       SERVICE_ORDER_ID : EMPTY
+                                 SOURCE : 0
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+                        REALTIME_INCOME : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"missing param [source]"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 94
+                                   NAME : INVALID decAccountAdjustAmount
+                                    URL : /V1/Driveraccount/decAccountAdjustAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 105
+                       SERVICE_ORDER_ID : EMPTY
+                                 SOURCE : -1
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+                        REALTIME_INCOME : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"param [source and rewards_type] value -1 and 100 are invalid"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 95
+                                   NAME : INVALID decAccountAdjustAmount
+                                    URL : /V1/Driveraccount/decAccountAdjustAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 105
+                       SERVICE_ORDER_ID : EMPTY
+                                 SOURCE : 10
+                           REWARDS_TYPE : 0
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+                        REALTIME_INCOME : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"missing param [rewards_type]"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 96
+                                   NAME : INVALID decAccountAdjustAmount
+                                    URL : /V1/Driveraccount/decAccountAdjustAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 105
+                       SERVICE_ORDER_ID : EMPTY
+                                 SOURCE : 10
+                           REWARDS_TYPE : -1
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+                        REALTIME_INCOME : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"param [source and rewards_type] value 10 and -1 are invalid"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 97
+                                   NAME : INVALID decAccountAdjustAmount
+                                    URL : /V1/Driveraccount/decAccountAdjustAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 105
+                       SERVICE_ORDER_ID : EMPTY
+                                 SOURCE : 999
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+                        REALTIME_INCOME : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"param [source and rewards_type] value 999 and 100 are invalid"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 98
+                                   NAME : INVALID decAccountAdjustAmount
+                                    URL : /V1/Driveraccount/decAccountAdjustAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 105
+                       SERVICE_ORDER_ID : EMPTY
+                                 SOURCE : 10
+                           REWARDS_TYPE : 9999
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+                        REALTIME_INCOME : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"param [source and rewards_type] value 10 and 9999 are invalid"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 99
+                                   NAME : VALID incAccountReward
+                                    URL : /V1/Driveraccount/incAccountReward
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 105
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":200,"ret_msg":"success","result":true}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 100
+                                   NAME : INVALID incAccountReward
+                                    URL : /V1/Driveraccount/incAccountReward
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 0
+                                 AMOUNT : 105
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"missing param [driver_id]"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 101
+                                   NAME : INVALID incAccountReward
+                                    URL : /V1/Driveraccount/incAccountReward
+                            HTTP_METHOD : POST
+                              DRIVER_ID : -1
+                                 AMOUNT : 105
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":2002,"ret_msg":"No such file or directory"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 102
+                                   NAME : INVALID incAccountReward
+                                    URL : /V1/Driveraccount/incAccountReward
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 99999999
+                                 AMOUNT : 105
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":500,"ret_msg":"Not found driver record by driverId(99999999)"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 103
+                                   NAME : INVALID incAccountReward
+                                    URL : /V1/Driveraccount/incAccountReward
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 0
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"missing param [amount]"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 104
+                                   NAME : INVALID incAccountReward
+                                    URL : /V1/Driveraccount/incAccountReward
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : -1
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"param amount is not < 0 or > 1000000 amount=-1"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 105
+                                   NAME : INVALID incAccountReward
+                                    URL : /V1/Driveraccount/incAccountReward
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 99999999999
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"param amount is not < 0 or > 1000000 amount=99999999999"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 106
+                                   NAME : INVALID incAccountReward
+                                    URL : /V1/Driveraccount/incAccountReward
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 105
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":200,"ret_msg":"success","result":true}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 107
+                                   NAME : INVALID incAccountReward
+                                    URL : /V1/Driveraccount/incAccountReward
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 105
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":200,"ret_msg":"success","result":true}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 108
+                                   NAME : INVALID incAccountReward
+                                    URL : /V1/Driveraccount/incAccountReward
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 105
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":200,"ret_msg":"success","result":true}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 109
+                                   NAME : INVALID incAccountReward
+                                    URL : /V1/Driveraccount/incAccountReward
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 105
+                                 SOURCE : 0
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"missing param [source]"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 110
+                                   NAME : INVALID incAccountReward
+                                    URL : /V1/Driveraccount/incAccountReward
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 105
+                                 SOURCE : -1
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"param [source and rewards_type] value -1 and 100 are invalid"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 111
+                                   NAME : INVALID incAccountReward
+                                    URL : /V1/Driveraccount/incAccountReward
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 105
+                                 SOURCE : 10
+                           REWARDS_TYPE : 0
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"missing param [rewards_type]"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 112
+                                   NAME : INVALID incAccountReward
+                                    URL : /V1/Driveraccount/incAccountReward
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 105
+                                 SOURCE : 10
+                           REWARDS_TYPE : -1
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"param [source and rewards_type] value 10 and -1 are invalid"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 113
+                                   NAME : INVALID incAccountReward
+                                    URL : /V1/Driveraccount/incAccountReward
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 105
+                                 SOURCE : 999
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"param [source and rewards_type] value 999 and 100 are invalid"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 114
+                                   NAME : INVALID incAccountReward
+                                    URL : /V1/Driveraccount/incAccountReward
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 105
+                                 SOURCE : 10
+                           REWARDS_TYPE : 9999
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"param [source and rewards_type] value 10 and 9999 are invalid"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 115
+                                   NAME : VALID decAccountReward
+                                    URL : /V1/Driveraccount/decAccountReward
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062395
+                                 AMOUNT : 105
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":200,"ret_msg":"success","result":true}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 116
+                                   NAME : INVALID decAccountReward
+                                    URL : /V1/Driveraccount/decAccountReward
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 0
+                                 AMOUNT : 105
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"missing param [driver_id]"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 117
+                                   NAME : INVALID decAccountReward
+                                    URL : /V1/Driveraccount/decAccountReward
+                            HTTP_METHOD : POST
+                              DRIVER_ID : -1
+                                 AMOUNT : 105
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":2002,"ret_msg":"No such file or directory"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 118
+                                   NAME : INVALID decAccountReward
+                                    URL : /V1/Driveraccount/decAccountReward
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 99999999
+                                 AMOUNT : 105
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":500,"ret_msg":"Not found driver record by driverId(99999999)"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 119
+                                   NAME : INVALID decAccountReward
+                                    URL : /V1/Driveraccount/decAccountReward
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062395
+                                 AMOUNT : 0
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"missing param [amount]"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 120
+                                   NAME : INVALID decAccountReward
+                                    URL : /V1/Driveraccount/decAccountReward
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062395
+                                 AMOUNT : -1
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"param amount is not <= 0 amount=-1"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 121
+                                   NAME : INVALID decAccountReward
+                                    URL : /V1/Driveraccount/decAccountReward
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062395
+                                 AMOUNT : 99999999999
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":200,"ret_msg":"success","result":true}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 122
+                                   NAME : INVALID decAccountReward
+                                    URL : /V1/Driveraccount/decAccountReward
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062395
+                                 AMOUNT : 105
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":200,"ret_msg":"success","result":true}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 123
+                                   NAME : INVALID decAccountReward
+                                    URL : /V1/Driveraccount/decAccountReward
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062395
+                                 AMOUNT : 105
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":200,"ret_msg":"success","result":true}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 124
+                                   NAME : INVALID decAccountReward
+                                    URL : /V1/Driveraccount/decAccountReward
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062395
+                                 AMOUNT : 105
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":200,"ret_msg":"success","result":true}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 125
+                                   NAME : INVALID decAccountReward
+                                    URL : /V1/Driveraccount/decAccountReward
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062395
+                                 AMOUNT : 105
+                                 SOURCE : 0
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"missing param [source]"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 126
+                                   NAME : INVALID decAccountReward
+                                    URL : /V1/Driveraccount/decAccountReward
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062395
+                                 AMOUNT : 105
+                                 SOURCE : -1
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"param [source and rewards_type] value -1 and 100 are invalid"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 127
+                                   NAME : INVALID decAccountReward
+                                    URL : /V1/Driveraccount/decAccountReward
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062395
+                                 AMOUNT : 105
+                                 SOURCE : 10
+                           REWARDS_TYPE : 0
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"missing param [rewards_type]"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 128
+                                   NAME : INVALID decAccountReward
+                                    URL : /V1/Driveraccount/decAccountReward
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062395
+                                 AMOUNT : 105
+                                 SOURCE : 10
+                           REWARDS_TYPE : -1
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"param [source and rewards_type] value 10 and -1 are invalid"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 129
+                                   NAME : INVALID decAccountReward
+                                    URL : /V1/Driveraccount/decAccountReward
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062395
+                                 AMOUNT : 105
+                                 SOURCE : 999
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"param [source and rewards_type] value 999 and 100 are invalid"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 130
+                                   NAME : INVALID decAccountReward
+                                    URL : /V1/Driveraccount/decAccountReward
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062395
+                                 AMOUNT : 105
+                                 SOURCE : 10
+                           REWARDS_TYPE : 9999
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"param [source and rewards_type] value 10 and 9999 are invalid"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 131
+                                   NAME : VALID procDistribute
+                                    URL : /V1/Driveraccount/procDistribute
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062395
+                       SERVICE_ORDER_ID : 6410257624040632421
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":500,"ret_msg":"The order(6410257624040632421)'s distribute_status is 30, not support distibute"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 132
+                                   NAME : INVALID procDistribute
+                                    URL : /V1/Driveraccount/procDistribute
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 0
+                       SERVICE_ORDER_ID : 6410257624040632421
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"missing param [driver_id]"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 133
+                                   NAME : INVALID procDistribute
+                                    URL : /V1/Driveraccount/procDistribute
+                            HTTP_METHOD : POST
+                              DRIVER_ID : -1
+                       SERVICE_ORDER_ID : 6410257624040632421
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":2002,"ret_msg":"No such file or directory"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 134
+                                   NAME : INVALID procDistribute
+                                    URL : /V1/Driveraccount/procDistribute
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 99999999
+                       SERVICE_ORDER_ID : 6410257624040632421
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":500,"ret_msg":"The order(6410257624040632421)'s distribute_status is 30, not support distibute"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 135
+                                   NAME : INVALID procDistribute
+                                    URL : /V1/Driveraccount/procDistribute
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062395
+                       SERVICE_ORDER_ID : 6410257624040632421
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":500,"ret_msg":"The order(6410257624040632421)'s distribute_status is 30, not support distibute"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 136
+                                   NAME : INVALID procDistribute
+                                    URL : /V1/Driveraccount/procDistribute
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062395
+                       SERVICE_ORDER_ID : 0
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"missing param [service_order_id]"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 137
+                                   NAME : INVALID procDistribute
+                                    URL : /V1/Driveraccount/procDistribute
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062395
+                       SERVICE_ORDER_ID : -1
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":500,"ret_msg":"Not found service_order record by orderId(-1)"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 138
+                                   NAME : INVALID procDistribute
+                                    URL : /V1/Driveraccount/procDistribute
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062395
+                       SERVICE_ORDER_ID : 9999999999999999999
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":500,"ret_msg":"Not found service_order_charge record by orderId(9999999999999999999)"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 139
+                                   NAME : INVALID procDistribute
+                                    URL : /V1/Driveraccount/procDistribute
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062395
+                       SERVICE_ORDER_ID : 6410257624040632421
+                                 SOURCE : 0
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"missing param [source]"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 140
+                                   NAME : INVALID procDistribute
+                                    URL : /V1/Driveraccount/procDistribute
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062395
+                       SERVICE_ORDER_ID : 6410257624040632421
+                                 SOURCE : -1
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"param [source and rewards_type] value -1 and 100 are invalid"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 141
+                                   NAME : INVALID procDistribute
+                                    URL : /V1/Driveraccount/procDistribute
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062395
+                       SERVICE_ORDER_ID : 6410257624040632421
+                                 SOURCE : 10
+                           REWARDS_TYPE : 0
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"missing param [rewards_type]"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 142
+                                   NAME : INVALID procDistribute
+                                    URL : /V1/Driveraccount/procDistribute
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062395
+                       SERVICE_ORDER_ID : 6410257624040632421
+                                 SOURCE : 10
+                           REWARDS_TYPE : -1
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"param [source and rewards_type] value 10 and -1 are invalid"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 143
+                                   NAME : INVALID procDistribute
+                                    URL : /V1/Driveraccount/procDistribute
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062395
+                       SERVICE_ORDER_ID : 6410257624040632421
+                                 SOURCE : 999
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"param [source and rewards_type] value 999 and 100 are invalid"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 144
+                                   NAME : INVALID procDistribute
+                                    URL : /V1/Driveraccount/procDistribute
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062395
+                       SERVICE_ORDER_ID : 6410257624040632421
+                                 SOURCE : 10
+                           REWARDS_TYPE : 9999
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"param [source and rewards_type] value 10 and 9999 are invalid"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 145
+                                   NAME : VALID orderWithoutSettlement
+                                    URL : /V1/Driveraccount/orderWithoutSettlement
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062395
+                       SERVICE_ORDER_ID : 6410613032584376429
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":200,"ret_msg":"success","result":{"driver_settlement_id":6413875100839474047}}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 146
+                                   NAME : INVALID orderWithoutSettlement
+                                    URL : /V1/Driveraccount/orderWithoutSettlement
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 0
+                       SERVICE_ORDER_ID : 6410613032584376429
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"missing param [driver_id]"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 147
+                                   NAME : INVALID orderWithoutSettlement
+                                    URL : /V1/Driveraccount/orderWithoutSettlement
+                            HTTP_METHOD : POST
+                              DRIVER_ID : -1
+                       SERVICE_ORDER_ID : 6410613032584376429
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":2002,"ret_msg":"No such file or directory"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 148
+                                   NAME : INVALID orderWithoutSettlement
+                                    URL : /V1/Driveraccount/orderWithoutSettlement
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 99999999
+                       SERVICE_ORDER_ID : 6410613032584376429
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":500,"ret_msg":"Not found driver record by driverId(99999999)"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 149
+                                   NAME : INVALID orderWithoutSettlement
+                                    URL : /V1/Driveraccount/orderWithoutSettlement
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062395
+                       SERVICE_ORDER_ID : 6410613032584376429
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":200,"ret_msg":"success","result":{"driver_settlement_id":6413875100839474051}}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 150
+                                   NAME : INVALID orderWithoutSettlement
+                                    URL : /V1/Driveraccount/orderWithoutSettlement
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062395
+                       SERVICE_ORDER_ID : 0
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"missing param [service_order_id]"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 151
+                                   NAME : INVALID orderWithoutSettlement
+                                    URL : /V1/Driveraccount/orderWithoutSettlement
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062395
+                       SERVICE_ORDER_ID : -1
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":500,"ret_msg":"Not found service_order record by orderId(-1)"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 152
+                                   NAME : INVALID orderWithoutSettlement
+                                    URL : /V1/Driveraccount/orderWithoutSettlement
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062395
+                       SERVICE_ORDER_ID : 9999999999999999999
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":500,"ret_msg":"The order is not support reverse."}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 153
+                                   NAME : INVALID orderWithoutSettlement
+                                    URL : /V1/Driveraccount/orderWithoutSettlement
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062395
+                       SERVICE_ORDER_ID : 6410613032584376429
+                                 SOURCE : 0
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"missing param [source]"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 154
+                                   NAME : INVALID orderWithoutSettlement
+                                    URL : /V1/Driveraccount/orderWithoutSettlement
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062395
+                       SERVICE_ORDER_ID : 6410613032584376429
+                                 SOURCE : -1
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"param [source and rewards_type] value -1 and 100 are invalid"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 155
+                                   NAME : INVALID orderWithoutSettlement
+                                    URL : /V1/Driveraccount/orderWithoutSettlement
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062395
+                       SERVICE_ORDER_ID : 6410613032584376429
+                                 SOURCE : 10
+                           REWARDS_TYPE : 0
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"missing param [rewards_type]"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 156
+                                   NAME : INVALID orderWithoutSettlement
+                                    URL : /V1/Driveraccount/orderWithoutSettlement
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062395
+                       SERVICE_ORDER_ID : 6410613032584376429
+                                 SOURCE : 10
+                           REWARDS_TYPE : -1
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"param [source and rewards_type] value 10 and -1 are invalid"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 157
+                                   NAME : INVALID orderWithoutSettlement
+                                    URL : /V1/Driveraccount/orderWithoutSettlement
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062395
+                       SERVICE_ORDER_ID : 6410613032584376429
+                                 SOURCE : 999
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"param [source and rewards_type] value 999 and 100 are invalid"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 158
+                                   NAME : INVALID orderWithoutSettlement
+                                    URL : /V1/Driveraccount/orderWithoutSettlement
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062395
+                       SERVICE_ORDER_ID : 6410613032584376429
+                                 SOURCE : 10
+                           REWARDS_TYPE : 9999
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"param [source and rewards_type] value 10 and 9999 are invalid"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 159
+                                   NAME : VALID orderAppealBack
+                                    URL : /V1/Driveraccount/orderAppealBack
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062395
+                       SERVICE_ORDER_ID : 6410613032584376429
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+                   DRIVER_SETTLEMENT_ID : EMPTY
+
+	RESPONSE: {"ret_code":200,"ret_msg":"success","result":true}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 160
+                                   NAME : INVALID orderAppealBack
+                                    URL : /V1/Driveraccount/orderAppealBack
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 0
+                       SERVICE_ORDER_ID : 6410613032584376429
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+                   DRIVER_SETTLEMENT_ID : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"missing param [driver_id]"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 161
+                                   NAME : INVALID orderAppealBack
+                                    URL : /V1/Driveraccount/orderAppealBack
+                            HTTP_METHOD : POST
+                              DRIVER_ID : -1
+                       SERVICE_ORDER_ID : 6410613032584376429
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+                   DRIVER_SETTLEMENT_ID : EMPTY
+
+	RESPONSE: {"ret_code":2002,"ret_msg":"No such file or directory"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 162
+                                   NAME : INVALID orderAppealBack
+                                    URL : /V1/Driveraccount/orderAppealBack
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 99999999
+                       SERVICE_ORDER_ID : 6410613032584376429
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+                   DRIVER_SETTLEMENT_ID : EMPTY
+
+	RESPONSE: {"ret_code":404,"ret_msg":"Not found driver info by driverId(99999999)"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 163
+                                   NAME : INVALID orderAppealBack
+                                    URL : /V1/Driveraccount/orderAppealBack
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062395
+                       SERVICE_ORDER_ID : 6410613032584376429
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+                   DRIVER_SETTLEMENT_ID : EMPTY
+
+	RESPONSE: {"ret_code":200,"ret_msg":"success","result":true}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 164
+                                   NAME : INVALID orderAppealBack
+                                    URL : /V1/Driveraccount/orderAppealBack
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062395
+                       SERVICE_ORDER_ID : 0
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+                   DRIVER_SETTLEMENT_ID : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"missing param [service_order_id]"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 165
+                                   NAME : INVALID orderAppealBack
+                                    URL : /V1/Driveraccount/orderAppealBack
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062395
+                       SERVICE_ORDER_ID : -1
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+                   DRIVER_SETTLEMENT_ID : EMPTY
+
+	RESPONSE: {"ret_code":500,"ret_msg":"batch_account_info is empty keyword=-1,distribute_commission_log_id=6413875105134441359"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 166
+                                   NAME : INVALID orderAppealBack
+                                    URL : /V1/Driveraccount/orderAppealBack
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062395
+                       SERVICE_ORDER_ID : 9999999999999999999
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+                   DRIVER_SETTLEMENT_ID : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"missing param [city]"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 167
+                                   NAME : INVALID orderAppealBack
+                                    URL : /V1/Driveraccount/orderAppealBack
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062395
+                       SERVICE_ORDER_ID : 6410613032584376429
+                                 SOURCE : 0
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+                   DRIVER_SETTLEMENT_ID : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"missing param [source]"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 168
+                                   NAME : INVALID orderAppealBack
+                                    URL : /V1/Driveraccount/orderAppealBack
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062395
+                       SERVICE_ORDER_ID : 6410613032584376429
+                                 SOURCE : -1
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+                   DRIVER_SETTLEMENT_ID : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"param [source and rewards_type] value -1 and 100 are invalid"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 169
+                                   NAME : INVALID orderAppealBack
+                                    URL : /V1/Driveraccount/orderAppealBack
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062395
+                       SERVICE_ORDER_ID : 6410613032584376429
+                                 SOURCE : 10
+                           REWARDS_TYPE : 0
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+                   DRIVER_SETTLEMENT_ID : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"missing param [rewards_type]"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 170
+                                   NAME : INVALID orderAppealBack
+                                    URL : /V1/Driveraccount/orderAppealBack
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062395
+                       SERVICE_ORDER_ID : 6410613032584376429
+                                 SOURCE : 10
+                           REWARDS_TYPE : -1
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+                   DRIVER_SETTLEMENT_ID : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"param [source and rewards_type] value 10 and -1 are invalid"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 171
+                                   NAME : INVALID orderAppealBack
+                                    URL : /V1/Driveraccount/orderAppealBack
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062395
+                       SERVICE_ORDER_ID : 6410613032584376429
+                                 SOURCE : 999
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+                   DRIVER_SETTLEMENT_ID : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"param [source and rewards_type] value 999 and 100 are invalid"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 172
+                                   NAME : INVALID orderAppealBack
+                                    URL : /V1/Driveraccount/orderAppealBack
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062395
+                       SERVICE_ORDER_ID : 6410613032584376429
+                                 SOURCE : 10
+                           REWARDS_TYPE : 9999
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+                   DRIVER_SETTLEMENT_ID : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"param [source and rewards_type] value 10 and 9999 are invalid"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 173
+                                   NAME : VALID getCommissionLog
+                                    URL : /V1/Distributecommissionlog/getCommissionLog
+                            HTTP_METHOD : GET
+                              DRIVER_ID : 50062395
+                       SERVICE_ORDER_ID : 6410254991225679972
+
+	RESPONSE: {"ret_code":200,"ret_msg":"success","result":[{"distribute_commission_log_id":"6410255280927550839","driver_id":"50062395","driver_type":"5","service_order_id":"6410254991225679972","company_id":"990","labour_company_id":"219","link_type":"1","product_type_id":"17","car_type_id":"37","city":"bj","yidao_ratio":"2100","company_commission_ratio":"200","labour_commission_ratio":"100","driver_commission_ratio":"6320","fund_commission_ratio":"1340","commission_ratio":"2000","distribute_amount":"1000","distribute_yidao_amount":"210","distribute_company_amount":"16","distribute_labour_company_amount":"8","distribute_driver_amount":"632","distribute_fund_amount":"134","company_receipt_amount":"16","labour_company_receipt_amount":"640","driver_laowu_amount":"0","source":"10","type":"1","create_time":"1492503863","update_time":"1492503863","status":"10"}]}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 174
+                                   NAME : INVALID getCommissionLog
+                                    URL : /V1/Distributecommissionlog/getCommissionLog
+                            HTTP_METHOD : GET
+                              DRIVER_ID : 0
+                       SERVICE_ORDER_ID : 6410254991225679972
+
+	RESPONSE: {"ret_code":600,"ret_msg":"missing param [driver_id]"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 175
+                                   NAME : INVALID getCommissionLog
+                                    URL : /V1/Distributecommissionlog/getCommissionLog
+                            HTTP_METHOD : GET
+                              DRIVER_ID : -1
+                       SERVICE_ORDER_ID : 6410254991225679972
+
+	RESPONSE: {"ret_code":2002,"ret_msg":"No such file or directory"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 176
+                                   NAME : INVALID getCommissionLog
+                                    URL : /V1/Distributecommissionlog/getCommissionLog
+                            HTTP_METHOD : GET
+                              DRIVER_ID : 99999999
+                       SERVICE_ORDER_ID : 6410254991225679972
+
+	RESPONSE: {"ret_code":200,"ret_msg":"success","result":false}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 177
+                                   NAME : INVALID getCommissionLog
+                                    URL : /V1/Distributecommissionlog/getCommissionLog
+                            HTTP_METHOD : GET
+                              DRIVER_ID : 50062395
+                       SERVICE_ORDER_ID : 0
+
+	RESPONSE: {"ret_code":600,"ret_msg":"missing param [service_order_id]"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 178
+                                   NAME : INVALID getCommissionLog
+                                    URL : /V1/Distributecommissionlog/getCommissionLog
+                            HTTP_METHOD : GET
+                              DRIVER_ID : 50062395
+                       SERVICE_ORDER_ID : -1
+
+	RESPONSE: {"ret_code":200,"ret_msg":"success","result":false}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 179
+                                   NAME : INVALID getCommissionLog
+                                    URL : /V1/Distributecommissionlog/getCommissionLog
+                            HTTP_METHOD : GET
+                              DRIVER_ID : 50062395
+                       SERVICE_ORDER_ID : 9999999999999999999
+
+	RESPONSE: {"ret_code":200,"ret_msg":"success","result":false}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 180
+                                   NAME : VALID computeDistribute
+                                    URL : /V1/Driveraccount/computeDistribute
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062395
+                                 AMOUNT : 105
+                       SERVICE_ORDER_ID : 6410259707099770983
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+                                   CITY : bj
+                            CAR_TYPE_ID : 1
+                        PRODUCT_TYPE_ID : 17
+                         HIGHWAY_AMOUNT : EMPTY
+                         PARKING_AMOUNT : EMPTY
+                          ADDONS_AMOUNT : EMPTY
+                      DISTRIBUTE_STATUS : EMPTY
+
+	RESPONSE: {"ret_code":200,"ret_msg":"success","result":{"distribute_driver_amount":66,"distribute_company_amount":2,"distribute_labour_company_amount":1,"distribute_fund_amount":14,"distribute_yidao_amount":22,"labour_company_receipt_amount":67,"company_receipt_amount":2,"driver_laowu_amount":0,"fund_commission_ratio":1333.3333333333,"driver_commission_ratio":6285.7142857143}}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 181
+                                   NAME : INVALID computeDistribute
+                                    URL : /V1/Driveraccount/computeDistribute
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062395
+                                 AMOUNT : 105
+                       SERVICE_ORDER_ID : 6410259707099770983
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+                                   CITY : 0
+                            CAR_TYPE_ID : 1
+                        PRODUCT_TYPE_ID : 17
+                         HIGHWAY_AMOUNT : EMPTY
+                         PARKING_AMOUNT : EMPTY
+                          ADDONS_AMOUNT : EMPTY
+                      DISTRIBUTE_STATUS : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"missing param [city]"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 182
+                                   NAME : INVALID computeDistribute
+                                    URL : /V1/Driveraccount/computeDistribute
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062395
+                                 AMOUNT : 105
+                       SERVICE_ORDER_ID : 6410259707099770983
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+                                   CITY : -1
+                            CAR_TYPE_ID : 1
+                        PRODUCT_TYPE_ID : 17
+                         HIGHWAY_AMOUNT : EMPTY
+                         PARKING_AMOUNT : EMPTY
+                          ADDONS_AMOUNT : EMPTY
+                      DISTRIBUTE_STATUS : EMPTY
+
+	RESPONSE: {"ret_code":10003,"ret_msg":"the service_order_id:6410259707099770983 no record driver_charge_record,no repeat distribute"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 183
+                                   NAME : INVALID computeDistribute
+                                    URL : /V1/Driveraccount/computeDistribute
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062395
+                                 AMOUNT : 105
+                       SERVICE_ORDER_ID : 6410259707099770983
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+                                   CITY : XX
+                            CAR_TYPE_ID : 1
+                        PRODUCT_TYPE_ID : 17
+                         HIGHWAY_AMOUNT : EMPTY
+                         PARKING_AMOUNT : EMPTY
+                          ADDONS_AMOUNT : EMPTY
+                      DISTRIBUTE_STATUS : EMPTY
+
+	RESPONSE: {"ret_code":10003,"ret_msg":"the service_order_id:6410259707099770983 no record driver_charge_record,no repeat distribute"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 184
+                                   NAME : INVALID computeDistribute
+                                    URL : /V1/Driveraccount/computeDistribute
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062395
+                                 AMOUNT : 105
+                       SERVICE_ORDER_ID : 6410259707099770983
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+                                   CITY : bj
+                            CAR_TYPE_ID : 0
+                        PRODUCT_TYPE_ID : 17
+                         HIGHWAY_AMOUNT : EMPTY
+                         PARKING_AMOUNT : EMPTY
+                          ADDONS_AMOUNT : EMPTY
+                      DISTRIBUTE_STATUS : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"missing param [car_type_id]"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 185
+                                   NAME : INVALID computeDistribute
+                                    URL : /V1/Driveraccount/computeDistribute
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062395
+                                 AMOUNT : 105
+                       SERVICE_ORDER_ID : 6410259707099770983
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+                                   CITY : bj
+                            CAR_TYPE_ID : -1
+                        PRODUCT_TYPE_ID : 17
+                         HIGHWAY_AMOUNT : EMPTY
+                         PARKING_AMOUNT : EMPTY
+                          ADDONS_AMOUNT : EMPTY
+                      DISTRIBUTE_STATUS : EMPTY
+
+	RESPONSE: {"ret_code":10003,"ret_msg":"the service_order_id:6410259707099770983 no record driver_charge_record,no repeat distribute"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 186
+                                   NAME : INVALID computeDistribute
+                                    URL : /V1/Driveraccount/computeDistribute
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062395
+                                 AMOUNT : 105
+                       SERVICE_ORDER_ID : 6410259707099770983
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+                                   CITY : bj
+                            CAR_TYPE_ID : 99XO
+                        PRODUCT_TYPE_ID : 17
+                         HIGHWAY_AMOUNT : EMPTY
+                         PARKING_AMOUNT : EMPTY
+                          ADDONS_AMOUNT : EMPTY
+                      DISTRIBUTE_STATUS : EMPTY
+
+	RESPONSE: {"ret_code":10003,"ret_msg":"the service_order_id:6410259707099770983 no record driver_charge_record,no repeat distribute"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 187
+                                   NAME : INVALID computeDistribute
+                                    URL : /V1/Driveraccount/computeDistribute
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062395
+                                 AMOUNT : 105
+                       SERVICE_ORDER_ID : 6410259707099770983
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+                                   CITY : bj
+                            CAR_TYPE_ID : 1
+                        PRODUCT_TYPE_ID : 0
+                         HIGHWAY_AMOUNT : EMPTY
+                         PARKING_AMOUNT : EMPTY
+                          ADDONS_AMOUNT : EMPTY
+                      DISTRIBUTE_STATUS : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"missing param [product_type_id]"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 188
+                                   NAME : INVALID computeDistribute
+                                    URL : /V1/Driveraccount/computeDistribute
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062395
+                                 AMOUNT : 105
+                       SERVICE_ORDER_ID : 6410259707099770983
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+                                   CITY : bj
+                            CAR_TYPE_ID : 1
+                        PRODUCT_TYPE_ID : -1
+                         HIGHWAY_AMOUNT : EMPTY
+                         PARKING_AMOUNT : EMPTY
+                          ADDONS_AMOUNT : EMPTY
+                      DISTRIBUTE_STATUS : EMPTY
+
+	RESPONSE: {"ret_code":10003,"ret_msg":"the service_order_id:6410259707099770983 no record driver_charge_record,no repeat distribute"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 189
+                                   NAME : INVALID computeDistribute
+                                    URL : /V1/Driveraccount/computeDistribute
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062395
+                                 AMOUNT : 105
+                       SERVICE_ORDER_ID : 6410259707099770983
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+                                   CITY : bj
+                            CAR_TYPE_ID : 1
+                        PRODUCT_TYPE_ID : 990X
+                         HIGHWAY_AMOUNT : EMPTY
+                         PARKING_AMOUNT : EMPTY
+                          ADDONS_AMOUNT : EMPTY
+                      DISTRIBUTE_STATUS : EMPTY
+
+	RESPONSE: {"ret_code":10003,"ret_msg":"the service_order_id:6410259707099770983 no record driver_charge_record,no repeat distribute"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 190
+                                   NAME : INVALID computeDistribute
+                                    URL : /V1/Driveraccount/computeDistribute
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 0
+                                 AMOUNT : 105
+                       SERVICE_ORDER_ID : 6410259707099770983
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+                                   CITY : bj
+                            CAR_TYPE_ID : 1
+                        PRODUCT_TYPE_ID : 17
+                         HIGHWAY_AMOUNT : EMPTY
+                         PARKING_AMOUNT : EMPTY
+                          ADDONS_AMOUNT : EMPTY
+                      DISTRIBUTE_STATUS : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"missing param [driver_id]"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 191
+                                   NAME : INVALID computeDistribute
+                                    URL : /V1/Driveraccount/computeDistribute
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062395
+                                 AMOUNT : -1
+                       SERVICE_ORDER_ID : 6410259707099770983
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+                                   CITY : bj
+                            CAR_TYPE_ID : 1
+                        PRODUCT_TYPE_ID : 17
+                         HIGHWAY_AMOUNT : EMPTY
+                         PARKING_AMOUNT : EMPTY
+                          ADDONS_AMOUNT : EMPTY
+                      DISTRIBUTE_STATUS : EMPTY
+
+	RESPONSE: {"ret_code":10003,"ret_msg":"the service_order_id:6410259707099770983 no record driver_charge_record,no repeat distribute"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 192
+                                   NAME : INVALID computeDistribute
+                                    URL : /V1/Driveraccount/computeDistribute
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062395
+                                 AMOUNT : 105
+                       SERVICE_ORDER_ID : ABCDEFGHIJKLMNOPQRS
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+                                   CITY : bj
+                            CAR_TYPE_ID : 1
+                        PRODUCT_TYPE_ID : 17
+                         HIGHWAY_AMOUNT : EMPTY
+                         PARKING_AMOUNT : EMPTY
+                          ADDONS_AMOUNT : EMPTY
+                      DISTRIBUTE_STATUS : EMPTY
+
+	RESPONSE: {"ret_code":1054,"ret_msg":"Unknown column 'ABCDEFGHIJKLMNOPQRS' in 'where clause'"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 193
+                                   NAME : INVALID computeDistribute
+                                    URL : /V1/Driveraccount/computeDistribute
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062395
+                                 AMOUNT : 105
+                       SERVICE_ORDER_ID : 6410259707099770983
+                                 SOURCE : -A
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+                                   CITY : bj
+                            CAR_TYPE_ID : 1
+                        PRODUCT_TYPE_ID : 17
+                         HIGHWAY_AMOUNT : EMPTY
+                         PARKING_AMOUNT : EMPTY
+                          ADDONS_AMOUNT : EMPTY
+                      DISTRIBUTE_STATUS : EMPTY
+
+	RESPONSE: {"ret_code":1054,"ret_msg":"Unknown column 'A' in 'where clause'"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 194
+                                   NAME : INVALID computeDistribute
+                                    URL : /V1/Driveraccount/computeDistribute
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062395
+                                 AMOUNT : 105
+                       SERVICE_ORDER_ID : 6410259707099770983
+                                 SOURCE : 10
+                           REWARDS_TYPE : d
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+                                   CITY : bj
+                            CAR_TYPE_ID : 1
+                        PRODUCT_TYPE_ID : 17
+                         HIGHWAY_AMOUNT : EMPTY
+                         PARKING_AMOUNT : EMPTY
+                          ADDONS_AMOUNT : EMPTY
+                      DISTRIBUTE_STATUS : EMPTY
+
+	RESPONSE: {"ret_code":1054,"ret_msg":"Unknown column 'd' in 'where clause'"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 195
+                                   NAME : VALID reversalOrder
+                                    URL : /V1/Driveraccount/reversalOrder
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062395
+                       SERVICE_ORDER_ID : 6410273137462505576
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+                      DISTRIBUTE_STATUS : EMPTY
+               DISTRIBUTE_DRIVER_AMOUNT : EMPTY
+              DISTRIBUTE_COMPANY_AMOUNT : EMPTY
+                DISTRIBUTE_YIDAO_AMOUNT : EMPTY
+       DISTRIBUTE_LABOUR_COMPANY_AMOUNT : EMPTY
+                 DISTRIBUTE_FUND_AMOUNT : EMPTY
+                 COMPANY_RECEIPT_AMOUNT : EMPTY
+          LABOUR_COMPANY_RECEIPT_AMOUNT : EMPTY
+                    DRIVER_LAOWU_AMOUNT : EMPTY
+                               END_TIME : EMPTY
+
+	RESPONSE: {"ret_code":200,"ret_msg":"success","result":"noneedreverse"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 196
+                                   NAME : INVALID reversalOrder
+                                    URL : /V1/Driveraccount/reversalOrder
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 0
+                       SERVICE_ORDER_ID : 6410273137462505576
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+                      DISTRIBUTE_STATUS : EMPTY
+               DISTRIBUTE_DRIVER_AMOUNT : EMPTY
+              DISTRIBUTE_COMPANY_AMOUNT : EMPTY
+                DISTRIBUTE_YIDAO_AMOUNT : EMPTY
+       DISTRIBUTE_LABOUR_COMPANY_AMOUNT : EMPTY
+                 DISTRIBUTE_FUND_AMOUNT : EMPTY
+                 COMPANY_RECEIPT_AMOUNT : EMPTY
+          LABOUR_COMPANY_RECEIPT_AMOUNT : EMPTY
+                    DRIVER_LAOWU_AMOUNT : EMPTY
+                               END_TIME : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"missing param [driver_id]"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 197
+                                   NAME : INVALID reversalOrder
+                                    URL : /V1/Driveraccount/reversalOrder
+                            HTTP_METHOD : POST
+                              DRIVER_ID : -XXXXAAA
+                       SERVICE_ORDER_ID : 6410273137462505576
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+                      DISTRIBUTE_STATUS : EMPTY
+               DISTRIBUTE_DRIVER_AMOUNT : EMPTY
+              DISTRIBUTE_COMPANY_AMOUNT : EMPTY
+                DISTRIBUTE_YIDAO_AMOUNT : EMPTY
+       DISTRIBUTE_LABOUR_COMPANY_AMOUNT : EMPTY
+                 DISTRIBUTE_FUND_AMOUNT : EMPTY
+                 COMPANY_RECEIPT_AMOUNT : EMPTY
+          LABOUR_COMPANY_RECEIPT_AMOUNT : EMPTY
+                    DRIVER_LAOWU_AMOUNT : EMPTY
+                               END_TIME : EMPTY
+
+	RESPONSE: {"ret_code":2002,"ret_msg":"No such file or directory"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 198
+                                   NAME : INVALID reversalOrder
+                                    URL : /V1/Driveraccount/reversalOrder
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 99999999
+                       SERVICE_ORDER_ID : 6410273137462505576
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+                      DISTRIBUTE_STATUS : EMPTY
+               DISTRIBUTE_DRIVER_AMOUNT : EMPTY
+              DISTRIBUTE_COMPANY_AMOUNT : EMPTY
+                DISTRIBUTE_YIDAO_AMOUNT : EMPTY
+       DISTRIBUTE_LABOUR_COMPANY_AMOUNT : EMPTY
+                 DISTRIBUTE_FUND_AMOUNT : EMPTY
+                 COMPANY_RECEIPT_AMOUNT : EMPTY
+          LABOUR_COMPANY_RECEIPT_AMOUNT : EMPTY
+                    DRIVER_LAOWU_AMOUNT : EMPTY
+                               END_TIME : EMPTY
+
+	RESPONSE: {"ret_code":200,"ret_msg":"success","result":"noneedreverse"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 199
+                                   NAME : INVALID reversalOrder
+                                    URL : /V1/Driveraccount/reversalOrder
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062395
+                       SERVICE_ORDER_ID : EMPTY
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+                      DISTRIBUTE_STATUS : EMPTY
+               DISTRIBUTE_DRIVER_AMOUNT : EMPTY
+              DISTRIBUTE_COMPANY_AMOUNT : EMPTY
+                DISTRIBUTE_YIDAO_AMOUNT : EMPTY
+       DISTRIBUTE_LABOUR_COMPANY_AMOUNT : EMPTY
+                 DISTRIBUTE_FUND_AMOUNT : EMPTY
+                 COMPANY_RECEIPT_AMOUNT : EMPTY
+          LABOUR_COMPANY_RECEIPT_AMOUNT : EMPTY
+                    DRIVER_LAOWU_AMOUNT : EMPTY
+                               END_TIME : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"missing param [service_order_id]"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 200
+                                   NAME : INVALID reversalOrder
+                                    URL : /V1/Driveraccount/reversalOrder
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062395
+                       SERVICE_ORDER_ID : -410273137462505576
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+                      DISTRIBUTE_STATUS : EMPTY
+               DISTRIBUTE_DRIVER_AMOUNT : EMPTY
+              DISTRIBUTE_COMPANY_AMOUNT : EMPTY
+                DISTRIBUTE_YIDAO_AMOUNT : EMPTY
+       DISTRIBUTE_LABOUR_COMPANY_AMOUNT : EMPTY
+                 DISTRIBUTE_FUND_AMOUNT : EMPTY
+                 COMPANY_RECEIPT_AMOUNT : EMPTY
+          LABOUR_COMPANY_RECEIPT_AMOUNT : EMPTY
+                    DRIVER_LAOWU_AMOUNT : EMPTY
+                               END_TIME : EMPTY
+
+	RESPONSE: {"ret_code":200,"ret_msg":"success","result":"noneedreverse"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 201
+                                   NAME : INVALID reversalOrder
+                                    URL : /V1/Driveraccount/reversalOrder
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062395
+                       SERVICE_ORDER_ID : 9999999999999999999
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+                      DISTRIBUTE_STATUS : EMPTY
+               DISTRIBUTE_DRIVER_AMOUNT : EMPTY
+              DISTRIBUTE_COMPANY_AMOUNT : EMPTY
+                DISTRIBUTE_YIDAO_AMOUNT : EMPTY
+       DISTRIBUTE_LABOUR_COMPANY_AMOUNT : EMPTY
+                 DISTRIBUTE_FUND_AMOUNT : EMPTY
+                 COMPANY_RECEIPT_AMOUNT : EMPTY
+          LABOUR_COMPANY_RECEIPT_AMOUNT : EMPTY
+                    DRIVER_LAOWU_AMOUNT : EMPTY
+                               END_TIME : EMPTY
+
+	RESPONSE: {"ret_code":200,"ret_msg":"success","result":"noneedreverse"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 202
+                                   NAME : INVALID reversalOrder
+                                    URL : /V1/Driveraccount/reversalOrder
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062395
+                       SERVICE_ORDER_ID : 6410273137462505576
+                                 SOURCE : 0
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+                      DISTRIBUTE_STATUS : EMPTY
+               DISTRIBUTE_DRIVER_AMOUNT : EMPTY
+              DISTRIBUTE_COMPANY_AMOUNT : EMPTY
+                DISTRIBUTE_YIDAO_AMOUNT : EMPTY
+       DISTRIBUTE_LABOUR_COMPANY_AMOUNT : EMPTY
+                 DISTRIBUTE_FUND_AMOUNT : EMPTY
+                 COMPANY_RECEIPT_AMOUNT : EMPTY
+          LABOUR_COMPANY_RECEIPT_AMOUNT : EMPTY
+                    DRIVER_LAOWU_AMOUNT : EMPTY
+                               END_TIME : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"missing param [source]"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 203
+                                   NAME : INVALID reversalOrder
+                                    URL : /V1/Driveraccount/reversalOrder
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062395
+                       SERVICE_ORDER_ID : 6410273137462505576
+                                 SOURCE : -1
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+                      DISTRIBUTE_STATUS : EMPTY
+               DISTRIBUTE_DRIVER_AMOUNT : EMPTY
+              DISTRIBUTE_COMPANY_AMOUNT : EMPTY
+                DISTRIBUTE_YIDAO_AMOUNT : EMPTY
+       DISTRIBUTE_LABOUR_COMPANY_AMOUNT : EMPTY
+                 DISTRIBUTE_FUND_AMOUNT : EMPTY
+                 COMPANY_RECEIPT_AMOUNT : EMPTY
+          LABOUR_COMPANY_RECEIPT_AMOUNT : EMPTY
+                    DRIVER_LAOWU_AMOUNT : EMPTY
+                               END_TIME : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"param [source and rewards_type] value -1 and 100 are invalid"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 204
+                                   NAME : INVALID reversalOrder
+                                    URL : /V1/Driveraccount/reversalOrder
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062395
+                       SERVICE_ORDER_ID : 6410273137462505576
+                                 SOURCE : XX
+                           REWARDS_TYPE : 100
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+                      DISTRIBUTE_STATUS : EMPTY
+               DISTRIBUTE_DRIVER_AMOUNT : EMPTY
+              DISTRIBUTE_COMPANY_AMOUNT : EMPTY
+                DISTRIBUTE_YIDAO_AMOUNT : EMPTY
+       DISTRIBUTE_LABOUR_COMPANY_AMOUNT : EMPTY
+                 DISTRIBUTE_FUND_AMOUNT : EMPTY
+                 COMPANY_RECEIPT_AMOUNT : EMPTY
+          LABOUR_COMPANY_RECEIPT_AMOUNT : EMPTY
+                    DRIVER_LAOWU_AMOUNT : EMPTY
+                               END_TIME : EMPTY
+
+	RESPONSE: {"ret_code":1054,"ret_msg":"Unknown column 'XX' in 'where clause'"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 205
+                                   NAME : INVALID reversalOrder
+                                    URL : /V1/Driveraccount/reversalOrder
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062395
+                       SERVICE_ORDER_ID : 6410273137462505576
+                                 SOURCE : 10
+                           REWARDS_TYPE : 0
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+                      DISTRIBUTE_STATUS : EMPTY
+               DISTRIBUTE_DRIVER_AMOUNT : EMPTY
+              DISTRIBUTE_COMPANY_AMOUNT : EMPTY
+                DISTRIBUTE_YIDAO_AMOUNT : EMPTY
+       DISTRIBUTE_LABOUR_COMPANY_AMOUNT : EMPTY
+                 DISTRIBUTE_FUND_AMOUNT : EMPTY
+                 COMPANY_RECEIPT_AMOUNT : EMPTY
+          LABOUR_COMPANY_RECEIPT_AMOUNT : EMPTY
+                    DRIVER_LAOWU_AMOUNT : EMPTY
+                               END_TIME : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"missing param [rewards_type]"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 206
+                                   NAME : INVALID reversalOrder
+                                    URL : /V1/Driveraccount/reversalOrder
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062395
+                       SERVICE_ORDER_ID : 6410273137462505576
+                                 SOURCE : 10
+                           REWARDS_TYPE : -10
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+                      DISTRIBUTE_STATUS : EMPTY
+               DISTRIBUTE_DRIVER_AMOUNT : EMPTY
+              DISTRIBUTE_COMPANY_AMOUNT : EMPTY
+                DISTRIBUTE_YIDAO_AMOUNT : EMPTY
+       DISTRIBUTE_LABOUR_COMPANY_AMOUNT : EMPTY
+                 DISTRIBUTE_FUND_AMOUNT : EMPTY
+                 COMPANY_RECEIPT_AMOUNT : EMPTY
+          LABOUR_COMPANY_RECEIPT_AMOUNT : EMPTY
+                    DRIVER_LAOWU_AMOUNT : EMPTY
+                               END_TIME : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"param [source and rewards_type] value 10 and -10 are invalid"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 207
+                                   NAME : INVALID reversalOrder
+                                    URL : /V1/Driveraccount/reversalOrder
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062395
+                       SERVICE_ORDER_ID : 6410273137462505576
+                                 SOURCE : 10
+                           REWARDS_TYPE : XXX
+                                  EXTRA : CALLED BY JAVA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+                      DISTRIBUTE_STATUS : EMPTY
+               DISTRIBUTE_DRIVER_AMOUNT : EMPTY
+              DISTRIBUTE_COMPANY_AMOUNT : EMPTY
+                DISTRIBUTE_YIDAO_AMOUNT : EMPTY
+       DISTRIBUTE_LABOUR_COMPANY_AMOUNT : EMPTY
+                 DISTRIBUTE_FUND_AMOUNT : EMPTY
+                 COMPANY_RECEIPT_AMOUNT : EMPTY
+          LABOUR_COMPANY_RECEIPT_AMOUNT : EMPTY
+                    DRIVER_LAOWU_AMOUNT : EMPTY
+                               END_TIME : EMPTY
+
+	RESPONSE: {"ret_code":1054,"ret_msg":"Unknown column 'XXX' in 'where clause'"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 208
+                                   NAME : TESTCASE_SPECIFIC
+                                    URL : /V1/Driveraccount/incOrderAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 20
+                       SERVICE_ORDER_ID : 6408403168814591353
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : -A
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":200,"ret_msg":"success","result":true}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 209
+                                   NAME : TESTCASE_SPECIFIC
+                                    URL : /V1/Driveraccount/incOrderAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 20
+                       SERVICE_ORDER_ID : 6408403168814591353
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : 0
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"missing param [extra]"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 210
+                                   NAME : TESTCASE_SPECIFIC
+                                    URL : /V1/Driveraccount/incOrderAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 20
+                       SERVICE_ORDER_ID : 6408403168814591353
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : XXX
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":200,"ret_msg":"success","result":true}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 211
+                                   NAME : TESTCASE_SPECIFIC
+                                    URL : /V1/Driveraccount/incOrderAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 20
+                       SERVICE_ORDER_ID : 6408403168814591353
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : -1
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":200,"ret_msg":"success","result":true}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 212
+                                   NAME : TESTCASE_SPECIFIC
+                                    URL : /V1/Driveraccount/incOrderAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 20
+                       SERVICE_ORDER_ID : 6408403168814591353
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : HA
+                            OPERATOR_ID : -1
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":200,"ret_msg":"success","result":true}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 213
+                                   NAME : TESTCASE_SPECIFIC
+                                    URL : /V1/Driveraccount/incOrderAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 20
+                       SERVICE_ORDER_ID : 6408403168814591353
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : HA
+                            OPERATOR_ID : -A
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":200,"ret_msg":"success","result":true}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 214
+                                   NAME : TESTCASE_SPECIFIC
+                                    URL : /V1/Driveraccount/incOrderAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 20
+                       SERVICE_ORDER_ID : 6408403168814591353
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : HA
+                            OPERATOR_ID : ABCDEFGH
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":200,"ret_msg":"success","result":true}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 215
+                                   NAME : TESTCASE_SPECIFIC
+                                    URL : /V1/Driveraccount/incOrderAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 20
+                       SERVICE_ORDER_ID : 6408403168814591353
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : HA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : 12345
+
+	RESPONSE: {"ret_code":80002,"ret_msg":"driverId=50062255, source=10, order_id=12345 already exist"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 216
+                                   NAME : TESTCASE_SPECIFIC
+                                    URL : /V1/Driveraccount/incOrderAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 20
+                       SERVICE_ORDER_ID : 6408403168814591353
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : HA
+                            OPERATOR_ID : 0
+                               ORDER_ID : EMPTY
+
+	RESPONSE: {"ret_code":600,"ret_msg":"missing param [operator_id]"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 217
+                                   NAME : TESTCASE_SPECIFIC
+                                    URL : /V1/Driveraccount/incOrderAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 20
+                       SERVICE_ORDER_ID : 6408403168814591353
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : HA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : 12345
+
+	RESPONSE: {"ret_code":80002,"ret_msg":"driverId=50062255, source=10, order_id=12345 already exist"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 218
+                                   NAME : TESTCASE_SPECIFIC
+                                    URL : /V1/Driveraccount/incOrderAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 20
+                       SERVICE_ORDER_ID : 6408403168814591353
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : HA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : 0
+
+	RESPONSE: {"ret_code":200,"ret_msg":"success","result":true}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 219
+                                   NAME : TESTCASE_SPECIFIC
+                                    URL : /V1/Driveraccount/incOrderAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 20
+                       SERVICE_ORDER_ID : 6408403168814591353
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : HA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : -A
+
+	RESPONSE: {"ret_code":80002,"ret_msg":"driverId=50062255, source=10, order_id=-A already exist"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 220
+                                   NAME : TESTCASE_SPECIFIC
+                                    URL : /V1/Driveraccount/incOrderAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 20
+                       SERVICE_ORDER_ID : 6408403168814591353
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : HA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : -1
+
+	RESPONSE: {"ret_code":80002,"ret_msg":"driverId=50062255, source=10, order_id=-1 already exist"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 221
+                                   NAME : TESTCASE_SPECIFIC
+                                    URL : /V1/Driveraccount/incOrderAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 20
+                       SERVICE_ORDER_ID : 6408403168814591353
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : HA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : AAAAA
+
+	RESPONSE: {"ret_code":80002,"ret_msg":"driverId=50062255, source=10, order_id=AAAAA already exist"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 222
+                                   NAME : TESTCASE_SPECIFIC
+                                    URL : /V1/Driveraccount/incOrderAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 20
+                       SERVICE_ORDER_ID : 6408403168814591353
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : EMPTY
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : 99999
+
+	RESPONSE: {"ret_code":600,"ret_msg":"missing param [extra]"}
+
+
+*****************************************************************************************
+
+                             TESTCASEID : 223
+                                   NAME : TESTCASE_SPECIFIC
+                                    URL : /V1/Driveraccount/incOrderAmount
+                            HTTP_METHOD : POST
+                              DRIVER_ID : 50062255
+                                 AMOUNT : 20
+                       SERVICE_ORDER_ID : 6408403168814591353
+                                 SOURCE : 10
+                           REWARDS_TYPE : 100
+                                  EXTRA : HA
+                            OPERATOR_ID : 12345678
+                               ORDER_ID : -A
+
+	RESPONSE: {"ret_code":80002,"ret_msg":"driverId=50062255, source=10, order_id=-A already exist"}
+
+
+*****************************************************************************************
+

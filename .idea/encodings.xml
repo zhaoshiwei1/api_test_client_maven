@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/api/client/db/DataBaseUtility.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/api/client/globaldefine/GlobalDefine.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/api/client/http/HttpUtility.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/api/client/main/log.java" charset="GBK" />
+  </component>
+</project>
